@@ -89,5 +89,18 @@ export interface AISuggestions {
   techStack: TechStack
   theme: string
   customFeatures: string[]
+  customDbTables?: string
   specialRequirements: string
+  mvpScope?: string
+  keyDecisions?: string
+}
+
+export interface AIQuestions {
+  questions: string[]
+  summary: string
+}
+
+export interface QAItem {
+  question: string
+  answer: string
 }
