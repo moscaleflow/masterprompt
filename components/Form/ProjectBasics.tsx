@@ -3,6 +3,7 @@
 import { Input } from '@/components/ui/Input'
 import { Textarea } from '@/components/ui/Textarea'
 import { Select } from '@/components/ui/Select'
+import { DatePicker } from '@/components/ui/DatePicker'
 import { PromptConfig, AppType } from '@/types'
 import { appTypeOptions } from '@/lib/techStackDefaults'
 
@@ -33,12 +34,10 @@ export function ProjectBasics({ config, onUpdate, onAppTypeChange }: ProjectBasi
       />
 
       <div className="grid grid-cols-2 gap-4">
-        <Input
+        <DatePicker
           label="Ship By"
-          placeholder="2024-02-01"
-          type="date"
           value={config.shipBy}
-          onChange={(e) => onUpdate({ shipBy: e.target.value })}
+          onChange={(value) => onUpdate({ shipBy: value })}
         />
 
         <Select

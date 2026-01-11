@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-
 :root {
   /* Default theme: Purple Tech */
   --accent: #8B5CF6;
@@ -32,6 +30,7 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
   background-color: var(--bg-dark);
   color: var(--text-primary);
+  color-scheme: dark;
 }
 
 /* Custom scrollbar */
@@ -59,6 +58,16 @@ textarea,
 select {
   font-family: inherit;
   font-size: 16px;
+}
+
+/* Date input styling */
+input[type="date"] {
+  color-scheme: dark;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.8);
+  cursor: pointer;
 }
 
 /* Focus styles */
