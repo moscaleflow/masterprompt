@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useAuth } from '@/hooks/useAuth'
 import { usePromptGenerator } from '@/hooks/usePromptGenerator'
 import { Header } from '@/components/Layout/Header'
+import { QuickStart } from '@/components/Form/QuickStart'
 import { ProjectBasics } from '@/components/Form/ProjectBasics'
 import { TechStackSelector } from '@/components/Form/TechStackSelector'
 import { ThemeSelector } from '@/components/Form/ThemeSelector'
@@ -20,6 +21,7 @@ export default function Home() {
     updateTechStack,
     setAppType,
     addCustomFeature,
+    addCustomFeatures,
     removeCustomFeature,
     resetConfig,
     loadConfig,
@@ -60,6 +62,15 @@ export default function Home() {
         {/* Left Panel - Form */}
         <div className="w-1/2 border-r border-border overflow-y-auto">
           <div className="p-6 space-y-8">
+            <QuickStart
+              onApplySuggestions={updateConfig}
+              onSetTechStack={updateTechStack}
+              onSetAppType={setAppType}
+              onAddFeatures={addCustomFeatures}
+            />
+
+            <div className="h-px bg-border" />
+
             <ProjectBasics
               config={config}
               onUpdate={updateConfig}

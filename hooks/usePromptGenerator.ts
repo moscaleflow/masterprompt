@@ -44,6 +44,16 @@ export function usePromptGenerator() {
     }
   }, [])
 
+  const addCustomFeatures = useCallback((features: string[]) => {
+    const validFeatures = features.filter((f) => f.trim())
+    if (validFeatures.length > 0) {
+      setConfig((prev) => ({
+        ...prev,
+        customFeatures: [...prev.customFeatures, ...validFeatures],
+      }))
+    }
+  }, [])
+
   const removeCustomFeature = useCallback((index: number) => {
     setConfig((prev) => ({
       ...prev,
@@ -73,6 +83,7 @@ export function usePromptGenerator() {
     updateTechStack,
     setAppType,
     addCustomFeature,
+    addCustomFeatures,
     removeCustomFeature,
     resetConfig,
     loadConfig,

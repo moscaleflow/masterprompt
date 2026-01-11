@@ -80,3 +80,14 @@ export const defaultConfig: PromptConfig = {
   customDbTables: '',
   specialRequirements: '',
 }
+
+export interface AISuggestions {
+  projectNames: string[]
+  oneLiners: string[]
+  appType: AppType
+  targetUser: string
+  techStack: TechStack
+  theme: string
+  customFeatures: string[]
+  specialRequirements: string
+}
